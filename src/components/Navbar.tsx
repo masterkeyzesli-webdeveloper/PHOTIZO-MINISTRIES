@@ -29,7 +29,7 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled ? 'glass shadow-lg shadow-black/20 py-3' : 'bg-transparent py-5'
+        scrolled ? 'glass shadow-lg shadow-black/5 py-3' : 'bg-transparent py-5'
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8">
@@ -37,7 +37,9 @@ export default function Navbar() {
           <img
             src="https://photizoministries.org/wp-content/uploads/2023/08/logo-1-1.png"
             alt="Photizo Ministries logo"
-            className="h-10 sm:h-12 w-auto brightness-0 invert opacity-95 group-hover:opacity-100 transition"
+            width={140}
+            height={48}
+            className="h-10 w-auto object-contain sm:h-12"
           />
         </Link>
 
@@ -70,7 +72,7 @@ export default function Navbar() {
             href="https://litemanradio.mixlr.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-1 inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-[11px] tracking-[0.18em] uppercase text-midnight hover:bg-gold-soft transition-all duration-300"
+            className="ml-1 inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-[11px] tracking-[0.18em] uppercase text-[#241610] hover:bg-gold-soft transition-all duration-300"
           >
             <Radio size={14} /> Listen Live
           </a>
@@ -91,7 +93,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden overflow-hidden glass border-t border-gold/10"
+            className="lg:hidden overflow-hidden glass border-t border-[#e6d8c3]"
           >
             <div className="flex flex-col px-6 py-6 gap-5">
               {links.map((l) => (
@@ -110,7 +112,7 @@ export default function Navbar() {
                 href="https://litemanradio.mixlr.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex justify-center items-center gap-2 rounded-full bg-gold px-5 py-3 text-xs tracking-[0.2em] uppercase text-midnight"
+                className="inline-flex justify-center items-center gap-2 rounded-full bg-gold px-5 py-3 text-xs tracking-[0.2em] uppercase text-[#241610]"
               >
                 <Radio size={14} /> Listen Live
               </a>
@@ -118,7 +120,7 @@ export default function Navbar() {
                 href="https://wa.me/2348091592000?text=Hello%20Photizo%20Ministries%2C%20I%27d%20like%20to%20connect."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex justify-center rounded-full border border-gold/60 px-5 py-3 text-xs tracking-[0.2em] uppercase text-gold"
+                className="inline-flex justify-center rounded-full border border-gold/60 px-5 py-3 text-xs tracking-[0.2em] uppercase text-[#a95a10]"
               >
                 Connect With Us
               </a>
