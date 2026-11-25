@@ -1,21 +1,27 @@
 @import "tailwindcss";
 
+/* ─────────────────────────────────────────────────────────────
+   Photizo Ministries — warm ivory theme
+   The class names from the earlier night palette (midnight, ink,
+   cream, mist) are kept so every page inherits the new colours.
+   ───────────────────────────────────────────────────────────── */
 @theme {
   --font-display: "Cinzel", serif;
   --font-body: "Jost", sans-serif;
-  --color-midnight: #0b1220;
-  --color-ink: #111a2e;
-  --color-ink-soft: #18243d;
-  --color-gold: #d4a853;
-  --color-gold-soft: #e8c87a;
-  --color-cream: #f5f0e6;
-  --color-mist: #c9d3e0;
-  --color-teal: #4fd1c5;
-  --color-sky: #7dd3fc;
+
+  --color-midnight: #fbf7f1; /* page surface — warm ivory */
+  --color-ink: #fffdf9; /* raised surfaces, cards */
+  --color-ink-soft: #f7f1e7; /* soft panels */
+  --color-cream: #1f1412; /* primary text */
+  --color-mist: #4a3a33; /* secondary text */
+  --color-gold: #de8925;
+  --color-gold-soft: #c47216;
+  --color-teal: #1c6f5f;
+  --color-sky: #1c6f8f;
 }
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html {
@@ -25,8 +31,8 @@ html {
 body {
   margin: 0;
   font-family: var(--font-body);
-  background: var(--color-midnight);
-  color: var(--color-cream);
+  background: #fbf7f1;
+  color: #1f1412;
   overflow-x: hidden;
 }
 
@@ -35,21 +41,21 @@ body {
 }
 
 ::selection {
-  background: rgba(212, 168, 83, 0.35);
-  color: #fff;
+  background: rgba(222, 137, 37, 0.28);
+  color: #1f1412;
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #0b1220; }
-::-webkit-scrollbar-thumb { background: #2a3a55; border-radius: 5px; }
-::-webkit-scrollbar-thumb:hover { background: #d4a853; }
+::-webkit-scrollbar-track { background: #f4ede2; }
+::-webkit-scrollbar-thumb { background: #ddcdb4; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #de8925; }
 
 .font-display { font-family: var(--font-display); }
 .font-body { font-family: var(--font-body); }
 
 .text-gradient {
-  background: linear-gradient(135deg, #e8c87a 0%, #d4a853 40%, #f5f0e6 100%);
+  background: linear-gradient(135deg, #a8500c 0%, #de8925 45%, #c02e26 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -57,27 +63,27 @@ body {
 
 .bg-hero-glow {
   background:
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(79, 209, 197, 0.12), transparent 60%),
-    radial-gradient(ellipse 60% 50% at 80% 100%, rgba(212, 168, 83, 0.10), transparent 55%),
-    linear-gradient(180deg, #0b1220 0%, #111a2e 100%);
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(222, 137, 37, 0.16), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 100%, rgba(28, 111, 95, 0.08), transparent 55%),
+    linear-gradient(180deg, #fbf7f1 0%, #f6efe3 100%);
 }
 
 .section-glow {
   background:
-    radial-gradient(ellipse 50% 40% at 20% 50%, rgba(79, 209, 197, 0.06), transparent 60%),
-    radial-gradient(ellipse 40% 40% at 80% 20%, rgba(212, 168, 83, 0.06), transparent 60%);
+    radial-gradient(ellipse 50% 40% at 20% 50%, rgba(28, 111, 95, 0.05), transparent 60%),
+    radial-gradient(ellipse 40% 40% at 80% 20%, rgba(222, 137, 37, 0.07), transparent 60%);
 }
 
 .glass {
-  background: rgba(17, 26, 46, 0.72);
+  background: rgba(255, 253, 249, 0.86);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(212, 168, 83, 0.12);
+  border: 1px solid rgba(31, 20, 18, 0.08);
 }
 
 .gold-line {
   height: 2px;
-  background: linear-gradient(90deg, transparent, #d4a853, transparent);
+  background: linear-gradient(90deg, transparent, #de8925, transparent);
 }
 
 @keyframes float {
@@ -87,7 +93,7 @@ body {
 .animate-float { animation: float 5s ease-in-out infinite; }
 
 @keyframes pulse-ring {
-  0% { transform: scale(1); opacity: 0.5; }
+  0% { transform: scale(1); opacity: 0.45; }
   100% { transform: scale(1.6); opacity: 0; }
 }
 .pulse-ring::before {
@@ -95,7 +101,37 @@ body {
   position: absolute;
   inset: 0;
   border-radius: 9999px;
-  background: rgba(37, 211, 102, 0.4);
+  background: rgba(37, 211, 102, 0.35);
   animation: pulse-ring 2s ease-out infinite;
   z-index: -1;
 }
+
+/* ─────────────────────────────────────────────────────────────
+   Compatibility for the spots that still hard-code night colours.
+   Everything here is deliberately kept in one place so the pages
+   stay on the warm ivory palette.
+   ───────────────────────────────────────────────────────────── */
+[class*="#080e19"],
+[class*="#0b1220"],
+[class*="#0d1524"],
+[class*="#0f1a2d"],
+[class*="#111a2e"],
+[class*="#132038"],
+[class*="#18243d"] {
+  background-color: #f4ede2 !important;
+}
+
+/* near-white overlays used for cards become solid ivory cards */
+[class*="bg-white/"] { background-color: rgba(255, 253, 249, 0.78) !important; }
+[class*="border-white/"] { border-color: rgba(31, 20, 18, 0.10) !important; }
+[class*="divide-white/"] > :not([hidden]) ~ :not([hidden]) {
+  border-color: rgba(31, 20, 18, 0.08) !important;
+}
+
+/* these sat as light text on dark surfaces; now they must read as ink */
+[class*="text-white"],
+[class*="text-midnight"] { color: #1f1412 !important; }
+[class*="text-cream/4"],
+[class*="text-cream/3"] { color: rgba(31, 20, 18, 0.68) !important; }
+[class*="text-mist/6"],
+[class*="text-mist/5"] { color: rgba(74, 58, 51, 0.82) !important; }

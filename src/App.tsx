@@ -1,8 +1,7 @@
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import Layout from './components/Layout'
 import Home from './pages/Home'
-import About from './pages/About'
 import AboutPhotizo from './pages/AboutPhotizo'
 import Leadership from './pages/Leadership'
 import Videos from './pages/Videos'
@@ -19,7 +18,7 @@ export default function App() {
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<Navigate to="/about-photizo" replace />} />
           <Route path="/about-photizo" element={<AboutPhotizo />} />
           <Route path="/leadership" element={<Leadership />} />
           <Route path="/videos" element={<Videos />} />
