@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom'
 import { Youtube, Instagram, Facebook, Phone, Mail, MapPin, ArrowUpRight, Radio } from 'lucide-react'
 
 const socials = [
-  { href: 'https://youtube.com/@photizoatmospowermedia?si=RxSjqv5JTfW58IJP', icon: Youtube, label: 'YouTube' },
+  { href: 'https://youtube.com/@photizospowermedia', icon: Youtube, label: 'YouTube' },
   { href: 'https://www.instagram.com/photizoministries/', icon: Instagram, label: 'Instagram' },
-  { href: 'https://www.facebook.com/photizo.ministries', icon: Facebook, label: 'Facebook' },
+  { href: 'https://www.facebook.com/photizoministries/', icon: Facebook, label: 'Facebook' },
 ]
 
 const pages = [
